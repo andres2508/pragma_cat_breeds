@@ -1,0 +1,11 @@
+{
+  "language": "Language",
+  "loading": "Loading...",
+  "spanish": "Spanish",
+  "english": "English",
+  "unexpected_error": "An unexpected error occurred.",
+  "retry": "Retry",
+  "error": "Error",
+  "warning": "Warning",
+  "information": "Information"
+}

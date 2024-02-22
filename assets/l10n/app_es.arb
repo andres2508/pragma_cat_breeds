@@ -1,0 +1,11 @@
+{
+  "language": "Idioma",
+  "loading": "Cargando...",
+  "spanish": "Español",
+  "english": "Ingles",
+  "unexpected_error": "Ocurrió un error inesperado.",
+  "retry": "Reintentar",
+  "error": "Error",
+  "warning": "Advertencia",
+  "information": "Información"
+}
