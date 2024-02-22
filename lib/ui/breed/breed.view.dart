@@ -28,7 +28,13 @@ class _CatBreedMainViewState extends State<CatBreedMainView> {
     return ChangeNotifierProvider<CatBreedViewModel>(
       create: (_) => _model,
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text(
+            context.loc().breed_list,
+            style: const TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ),
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           child: Column(
@@ -51,12 +57,14 @@ class _CatBreedMainViewState extends State<CatBreedMainView> {
     return TextField(
       onChanged: (value) => _model.breedFilter(value),
       decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-          suffixIcon: const Icon(
-            Icons.search,
-            color: ColorStyles.darkColor,
-            size: 30,
-          )),
+        hintText: context.loc().breed_filter,
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+        suffixIcon: const Icon(
+          Icons.search,
+          color: ColorStyles.darkColor,
+          size: 30,
+        ),
+      ),
     );
   }
 

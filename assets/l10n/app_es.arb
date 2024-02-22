@@ -27,5 +27,7 @@
       }
     }
   },
-  "without_breed": "Sin razas disponibles..."
+  "without_breed": "Sin razas disponibles...",
+  "breed_list": "Catbreeds",
+  "breed_filter": "Filtro de razas"
 }

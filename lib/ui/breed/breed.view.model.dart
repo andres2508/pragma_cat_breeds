@@ -20,12 +20,14 @@ class CatBreedViewModel extends BaseViewModel {
   }
 
   breedFilter(String value) {
-    if (value == '') {
-      _filtered = _items;
-    } else {
-      _filtered = _items
-          .where((it) => it.name.toLowerCase().contains(value.toLowerCase()))
-          .toList();
+    if (!isLoading) {
+      if (value == '') {
+        _filtered = _items;
+      } else {
+        _filtered = _items
+            .where((it) => it.name.toLowerCase().contains(value.toLowerCase()))
+            .toList();
+      }
     }
     notifyUI();
     notifyListeners();
