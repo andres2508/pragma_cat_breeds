@@ -48,7 +48,7 @@ class _CatBreedMainViewState extends State<CatBreedMainView> {
 
   Widget _breedFilter() {
     return TextField(
-      onChanged: (value) {},
+      onChanged: (value) => _model.breedFilter(value),
       decoration: InputDecoration(
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           suffixIcon: const Icon(
