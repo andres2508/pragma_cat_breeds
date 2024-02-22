@@ -72,8 +72,10 @@ class HttpDataSource {
     return head != "" && head != "/" ? "$head$path" : "$path";
   }
 
-  Future<List<X>> getList<X>(String? path, ItemCreator<X> itemCreator,
-      {Map<String, dynamic>? queryParameters}) async {
+  Future<List<X>> getList<X>(
+      {String? path,
+      required ItemCreator<X> itemCreator,
+      Map<String, dynamic>? queryParameters}) async {
     Uri uri = baseUri(path: path, queryParams: queryParameters);
     final request = Request('GET', uri);
     var response = await executeRequest(request);

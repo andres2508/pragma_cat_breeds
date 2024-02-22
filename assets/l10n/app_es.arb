@@ -7,5 +7,7 @@
   "retry": "Reintentar",
   "error": "Error",
   "warning": "Advertencia",
-  "information": "Información"
+  "information": "Información",
+  "loading_breeds": "Cargando razas...",
+  "more": "Mas..."
 }

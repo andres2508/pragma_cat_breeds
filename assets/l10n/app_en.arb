@@ -7,5 +7,7 @@
   "retry": "Retry",
   "error": "Error",
   "warning": "Warning",
-  "information": "Information"
+  "information": "Information",
+  "loading_breeds": "Loading breeds...",
+  "more": "More..."
 }

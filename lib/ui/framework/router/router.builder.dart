@@ -1,4 +1,5 @@
 import 'package:cat_breeds/infrastructure/locator/service.locator.dart';
+import 'package:cat_breeds/ui/breed/breed.module.dart';
 import 'package:cat_breeds/ui/framework/dialog/dialogs.service.dart';
 import 'package:cat_breeds/ui/framework/router/error_page.view.dart';
 import 'package:cat_breeds/ui/framework/router/pragma.module.dart';
@@ -6,6 +7,7 @@ import 'package:go_router/go_router.dart';
 
 List<PragmaModule> _modules = [
   // Insert all route modules implemented
+  CatBreedModule()
 ];
 
 class PragmaRouterBuilder {
@@ -25,7 +27,7 @@ class PragmaRouterBuilder {
   GoRouter build() {
     return GoRouter(
       routes: _routes,
-      initialLocation: '/login',
+      initialLocation: '/home',
       redirect: (context, state) {
         // Change context in message listener
         serviceLocator<DialogsService>().changeContext(context);
