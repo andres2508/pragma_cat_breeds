@@ -84,10 +84,24 @@ class _CatBreedMainViewState extends State<CatBreedMainView> {
                 ),
                 itemCount: model.items.length,
               )
-            : Center(
-                child: Text(context.loc().without_breed),
-              );
+            : _withoutBreeds();
       },
+    );
+  }
+
+  Widget _withoutBreeds() {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(context.loc().without_breed),
+          const SizedBox(height: 10),
+          ElevatedButton(
+            onPressed: () => _model.loadRequired(),
+            child: Text(context.loc().retry),
+          )
+        ],
+      ),
     );
   }
 }
