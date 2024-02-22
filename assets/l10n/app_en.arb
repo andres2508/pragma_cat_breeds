@@ -9,5 +9,22 @@
   "warning": "Warning",
   "information": "Information",
   "loading_breeds": "Loading breeds...",
-  "more": "More..."
+  "more": "More...",
+  "description": "Description",
+  "country": "Country origin",
+  "intelligence": "Intelligence",
+  "adaptability": "Adaptability",
+  "dog_friendly": "Dog friendly",
+  "child_friendly": "Child friendly",
+  "wikipedia": "Wikipedia",
+  "temperament": "Temperament",
+  "life_span": "Life span",
+  "life_span_format": "{value} years",
+  "@life_span_format": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  }
 }

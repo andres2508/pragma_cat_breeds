@@ -9,7 +9,7 @@ part of 'breed.model.dart';
 CatBreed _$CatBreedFromJson(Map<String, dynamic> json) => CatBreed(
       json['id'] as String,
       json['name'] as String,
-      json['temperament'] as String,
+      CatBreed._buildTemperament(json['temperament'] as String),
       json['origin'] as String,
       json['description'] as String,
       json['life_span'] as String,

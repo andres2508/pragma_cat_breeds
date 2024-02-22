@@ -6,7 +6,7 @@ class PragmaMaterialTheme {
   static ThemeData light = ThemeData(
     appBarTheme: const AppBarTheme(
       backgroundColor: ColorStyles.darkColor,
-    ),
+        iconTheme: IconThemeData(color: Colors.white)),
     scaffoldBackgroundColor: ColorStyles.gray,
     primaryColor: ColorStyles.accentColor,
     primaryColorDark: ColorStyles.darkColor,
@@ -15,9 +15,8 @@ class PragmaMaterialTheme {
     textTheme: const TextTheme(
       titleLarge: TextStyle(fontSize: TextStyles.titleSize),
       bodyLarge: TextStyle(fontSize: TextStyles.titleSize),
-      labelLarge: TextStyle(fontSize: TextStyles.normalSize),
-      labelMedium: TextStyle(fontSize: TextStyles.normalSize),
-      labelSmall: TextStyle(fontSize: TextStyles.minimalSize),
+      bodyMedium: TextStyle(fontSize: TextStyles.normalSize),
+      bodySmall: TextStyle(fontSize: TextStyles.normalSize),
     ),
     useMaterial3: true,
     inputDecorationTheme: const InputDecorationTheme(

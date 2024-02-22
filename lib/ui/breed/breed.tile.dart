@@ -1,6 +1,7 @@
 import 'package:cat_breeds/domain/breed/model/breed.model.dart';
 import 'package:cat_breeds/infrastructure/localization/locale.utils.dart';
 import 'package:cat_breeds/styles/text.styles.dart';
+import 'package:cat_breeds/ui/breed/detail/breed_detail.view.dart';
 import 'package:cat_breeds/ui/common/stars.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -13,7 +14,7 @@ class CatBreedTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => context.push('/home/breed/detail'),
+      onTap: () => _navigateToDetail(context),
       child: Container(
         key: UniqueKey(),
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
@@ -33,7 +34,7 @@ class CatBreedTile extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () => context.push('/home/breed/detail'),
+                  onPressed: () => _navigateToDetail(context),
                   child: Text(
                     context.loc().more,
                     style: const TextStyle(
@@ -77,5 +78,10 @@ class CatBreedTile extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _navigateToDetail(BuildContext context) {
+    final params = BreedDetailViewParams(breed);
+    context.push('/home/breed/detail', extra: params);
   }
 }

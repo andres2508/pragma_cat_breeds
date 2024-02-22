@@ -6,7 +6,8 @@ part 'breed.model.g.dart';
 class CatBreed {
   String id;
   String name;
-  String temperament;
+  @JsonKey(fromJson: _buildTemperament)
+  List<String> temperament;
   String origin;
   String description;
   @JsonKey(name: "life_span")
@@ -44,4 +45,8 @@ class CatBreed {
   }
 
   void updateImage(String imageUrl) => imagePath = imageUrl;
+
+  static List<String> _buildTemperament(String value) {
+    return value.split(',');
+  }
 }
