@@ -1,16 +1,44 @@
-# cat_breeds
+# Prueba Técnica Pragma: Flutter
 
-A new Flutter project.
+La prueba técnica consiste en crear una aplicación móvil en Flutter, con el objetivo de listar razas de gatos y el
+detalle de cada raza.
 
-## Getting Started
+## Versiones de Código:
 
-This project is a starting point for a Flutter application.
+* Flutter 3.19.1 • channel beta
+* Dart 3.3.0
+* IDE: IntellijIDEA
 
-A few resources to get you started if this is your first Flutter project:
+## Getting Started:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Para compilar el proyecto es necesario tener activo un emulador que reconozca la librería de flutter. Después de tener
+activo el emulador simplemente se ejecuta la siguiente línea de comandos:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+flutter run
+```
+
+## Internationalization build
+
+Para generar los archivos de internacionalizacion, ejecutar este codigo.
+
+```
+flutter gen-l10n
+```
+
+## Json serialize build
+
+Para crear las clases que transforman los modelos a objetos json, se debe ejecutar el siguiente codigo
+
+```
+flutter pub run build_runner build --delete-conflicting-outputs 
+```
+
+## Splash screen compile
+
+Para compilar el splash screen se debe ejecutar el siguiente codigo, hay que tener en cuenta que apunta al
+archivo de configuracion previamente definido.
+
+```
+dart run flutter_native_splash:create --path=flutter_native_splash.yaml
+```
