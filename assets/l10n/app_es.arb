@@ -26,5 +26,6 @@
         "type": "String"
       }
     }
-  }
+  },
+  "without_breed": "Sin razas disponibles..."
 }

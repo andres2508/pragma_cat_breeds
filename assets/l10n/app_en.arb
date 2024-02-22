@@ -26,5 +26,6 @@
         "type": "String"
       }
     }
-  }
+  },
+  "without_breed": "Without breed available..."
 }

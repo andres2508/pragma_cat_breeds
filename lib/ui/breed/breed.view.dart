@@ -35,10 +35,11 @@ class _CatBreedMainViewState extends State<CatBreedMainView> {
             children: [
               _breedFilter(),
               Expanded(
-                  child: Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: _breedList(),
-              ))
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: _breedList(),
+                ),
+              )
             ],
           ),
         ),
@@ -61,27 +62,32 @@ class _CatBreedMainViewState extends State<CatBreedMainView> {
 
   Widget _breedList() {
     return ViewModelConsumer<CatBreedViewModel>(
-        progressIndicator: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const CircularProgressIndicator(),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(context.loc().loading_breeds, style: TextStyles.normalStyle)
-            ],
-          ),
-        ),
-        builder: (_, model) {
-          final items = model.items;
-          return ListView.separated(
-            itemBuilder: (_, index) => CatBreedTile(breed: items[index]),
-            separatorBuilder: (_, __) => const SizedBox(
+      progressIndicator: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const CircularProgressIndicator(),
+            const SizedBox(
               height: 10,
             ),
-            itemCount: model.items.length,
-          );
-        });
+            Text(context.loc().loading_breeds, style: TextStyles.normalStyle)
+          ],
+        ),
+      ),
+      builder: (_, model) {
+        final items = model.items;
+        return items.isNotEmpty
+            ? ListView.separated(
+                itemBuilder: (_, index) => CatBreedTile(breed: items[index]),
+                separatorBuilder: (_, __) => const SizedBox(
+                  height: 10,
+                ),
+                itemCount: model.items.length,
+              )
+            : Center(
+                child: Text(context.loc().without_breed),
+              );
+      },
+    );
   }
 }
